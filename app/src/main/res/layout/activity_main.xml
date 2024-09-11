@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#8BC34A"
+    tools:context=".MainActivity">
+
+    <!-- Text View to display our basic heading of "calculator"-->
+    <TextView
+        android:id="@+id/calculatorTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculator"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="30sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <!-- EditText to input the first number -->
+    <EditText
+        android:id="@+id/num1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter number 1"
+        android:background="@android:color/white"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/calculatorTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="16dp"/>
+
+    <!-- EditText to input the second number -->
+    <EditText
+        android:id="@+id/num2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter number 2"
+        android:background="@android:color/white"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/num1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="16dp"/>
+
+    <!-- TextView to display the result -->
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Result: "
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@id/num2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <!-- Button Row Layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/result"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="24dp">
+
+        <!-- Button to perform sum operation -->
+        <Button
+            android:id="@+id/sum"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="+"
+            android:onClick="doSum"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintWidth_percent="0.3"/>
+
+        <!-- Button to perform subtraction operation -->
+        <Button
+            android:id="@+id/sub"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="-"
+            android:onClick="doSub"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintWidth_percent="0.3"/>
+
+        <!-- Button to perform multiplication operation -->
+        <Button
+            android:id="@+id/mul"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="x"
+            android:onClick="doMul"
+            android:layout_marginStart="8dp"
+            app:layout_constraintWidth_percent="0.3"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Second Row of Buttons -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/sum"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp">
+
+        <!-- Button to perform division operation -->
+        <Button
+            android:id="@+id/div"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="/"
+            android:onClick="doDiv"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintWidth_percent="0.3"/>
+
+        <!-- Button to perform modulus operation -->
+        <Button
+            android:id="@+id/mod"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="%(mod)"
+            android:onClick="doMod"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintWidth_percent="0.3"/>
+
+        <!-- Button to perform power operation -->
+        <Button
+            android:id="@+id/pow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="n1^n2"
+            android:onClick="doPow"
+            android:layout_marginStart="8dp"
+            app:layout_constraintWidth_percent="0.3"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
